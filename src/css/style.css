@@ -39,6 +39,10 @@
   display: block;
 }
 
+.site-header__link--logo {
+  padding-top: 4px;
+}
+
 .site-header__link--language {
   display: none;
 }
@@ -56,24 +60,25 @@
     margin-right: 247px;
   }
 
-  .site-header__button svg {
+  .site-header__icon-burger,
+  .site-header__icon-language,
+  .site-header__icon-phone {
     width: 60px;
     height: 60px;
+  }
+
+  .site-header__link--logo {
+    padding-top: 12px;
+    margin-right: auto;
   }
 
   .site-header__logo {
     width: 103px;
     height: 28px;
-    margin-right: auto;
   }
 
   .site-header__link-wrapper {
     display: flex;
-  }
-
-  .site-header__link svg {
-    width: 60px;
-    height: 60px;
   }
 
   .site-header__link--language {
