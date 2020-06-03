@@ -4,6 +4,24 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Noto Sans'), local('NotoSans'),
+       url('../fonts/noto-sans-v9-latin_cyrillic-regular.woff2') format('woff2'),
+       url('../fonts/noto-sans-v9-latin_cyrillic-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Noto Sans Bold'), local('NotoSans-Bold'),
+       url('../fonts/noto-sans-v9-latin_cyrillic-700.woff2') format('woff2'),
+       url('../fonts/noto-sans-v9-latin_cyrillic-700.woff') format('woff');
+}
+
 .visually-hidden {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
@@ -13,6 +31,8 @@
   width: 1px;
   overflow: hidden;
 }
+
+/* Шапка */
 
 .site-header {
   display: flex;
@@ -113,4 +133,14 @@
   .site-header__link--language {
     margin-right: 30px;
   }
+}
+
+/* Блок о нас */
+
+.site-main__heading {
+  font-family: 'Noto Sans';
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 40px;
+  color: #333333;
 }
