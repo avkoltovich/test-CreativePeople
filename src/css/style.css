@@ -752,6 +752,31 @@ body {
   cursor: pointer;
 }
 
+@media (min-width: 768px) {
+  .news__heading {
+    font-size: 35px;
+    line-height: 50px;
+  }
+
+  .news__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .news__item {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .news__item:nth-child(even) {
+    padding-left: 20px;
+  }
+
+  .news__item:nth-child(odd) {
+    padding-right: 20px;
+  }
+}
+
 /* Подвал */
 
 .site-footer {
