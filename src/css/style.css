@@ -287,9 +287,12 @@ body {
 }
 
 .slider__dots {
+  margin-bottom: 20px;
+}
+
+.dots-list {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
 }
 
 .dots-list__item {
@@ -300,8 +303,16 @@ body {
   border-radius: 50%;
 }
 
+.dots-list__item--white {
+  border: 1px solid #ffffff;
+}
+
 .dots-list__item--red {
   border: 1px solid #ff6c6c;
+}
+
+.dots-list__item--white-active {
+  background-color: #ffffff;
 }
 
 .dots-list__item--red-active {
