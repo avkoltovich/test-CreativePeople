@@ -261,3 +261,25 @@ body {
   content: '';
 }
 
+.main-info__slider {
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.slider {
+  position: relative;
+
+  display: flex;
+  padding: 0;
+  margin-right: 15px;
+  margin-left: 15px;
+
+  list-style: none;
+
+  overflow: hidden;
+}
+
+.slider__slide {
+  width: 100%;
+}
+
