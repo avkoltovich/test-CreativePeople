@@ -335,3 +335,81 @@ body {
   letter-spacing: -0.02em;
   color: #000000;
 }
+
+.main-info__text-slider-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 417px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  background-image: url('../img/slider-bg/forest.png');
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.main-info__text-slider {
+  list-style: none;
+}
+
+.text-slider__slide {
+  display: none;
+
+  text-align: center;
+  color: #ffffff;
+}
+
+.text-slider__slide--active {
+  display: list-item;
+}
+
+.text-slider__heading {
+  margin-bottom: 15px;
+
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 25px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.text-slider__subheading {
+  display: block;
+  margin-bottom: 40px;
+
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: -0.01em;
+}
+
+.text-slider__text {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+}
+
+.main-info__text-slider-dots {
+  display: flex;
+  justify-content: center;
+}
+
+.dots-list__item {
+  display: block;
+  width: 7px;
+  height: 7px;
+
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+}
+
+.dots-list__item--active {
+  background-color: #ffffff;
+}
+
+.dots-list__item:not(:last-child) {
+  margin-right: 12px;
+}
