@@ -210,6 +210,10 @@ body {
   content: '';
 }
 
+.main-info {
+  padding-bottom: 80px;
+}
+
 .main-info__text {
   margin-bottom: 20px;
 
@@ -440,4 +444,82 @@ body {
   letter-spacing: -0.01em;
 }
 
+/* Блок новостей */
 
+.news__heading {
+  margin-top: 0;
+  margin-bottom: 30px;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 30px;
+  color: #333333;
+}
+
+.news__filter {
+  display: flex;
+}
+
+.news__filter-news,
+.news__filter-month {
+  position: relative;
+}
+
+.news__filter-button {
+  position: relative;
+
+  display: block;
+  margin-bottom: 5px;
+
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+
+.news__filter-button:not(:last-child) {
+  margin-right: 80px;
+}
+
+.news__filter-button::after {
+  position: absolute;
+  top: calc(50% - 4px);
+  right: -18px;
+
+  width: 12px;
+  height: 8px;
+
+  background-image: url('../img/svg/drop-down.svg');
+  background-repeat: no-repeat;
+
+  content: '';
+}
+
+.news__filter-list {
+  position: absolute;
+  top: 25px;
+  left: 0;
+
+  display: none;
+  flex-direction: column;
+  width: max-content;
+  padding: 4px 8px;
+  margin: 0;
+
+  background-color: #ffffff;
+  border: 0;
+}
+
+#news-year-dropdown:checked + .news__filter-list {
+  display: flex;
+}
+
+#news-month-dropdown:checked + .news__filter-list {
+  display: flex;
+}
+
+.news__filter-item {
+  margin-bottom: 10px;
+}
