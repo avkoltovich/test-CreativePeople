@@ -38,13 +38,15 @@ body {
   overflow: hidden;
 }
 
-.container {
+.container-header,
+.container-main {
   padding-right: 15px;
   padding-left: 15px;
 }
 
 @media (min-width: 768px) {
-  .container {
+  .container-header,
+  .container-main {
     padding-right: calc(50% - 384px + 40px);
     padding-left: calc(50% - 384px + 40px);
   }
@@ -52,16 +54,26 @@ body {
 
 
 @media (min-width: 1024px) {
-  .container {
+  .container-header {
     padding-right: calc(50% - 512px + 42px);
     padding-left: calc(50% - 512px + 42px);
+  }
+
+  .container-main {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: calc(50% - 512px + 42px);
   }
 }
 
 @media (min-width: 1440px) {
-  .container {
+  .container-header {
     padding-right: calc(50% - 720px + 40px);
     padding-left: calc(50% - 720px + 40px);
+  }
+
+  .container-main {
+    margin-left: calc(50% - 720px + 226px);
   }
 }
 
@@ -397,7 +409,7 @@ body {
   padding-top: 60px;
   padding-bottom: 60px;
 
-  background-image: url('../img/slider-bg/forest.png');
+  background-image: url('../img/slider-bg/forest.jpg');
   background-size: auto 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -496,18 +508,18 @@ body {
 
   .main-info__slider {
     margin-top: 50px;
-    margin-right: 40px;
+    margin-right: calc(50% - 384px + 40px);
     margin-bottom: 80px;
-    margin-left: 40px;
+    margin-left: calc(50% - 384px + 40px);
   }
 
   .main-info__cite {
     padding-top: 8px;
 
     margin-top: 50px;
-    margin-right: 40px;
+    margin-right: calc(50% - 384px + 40px);
     margin-bottom: 50px;
-    margin-left: 40px;
+    margin-left: calc(50% - 384px + 40px);
   }
 
   .cite__text {
@@ -530,6 +542,50 @@ body {
   .main-info__text-slider-wrapper {
     height: 719px;
     margin-top: 50px;
+
+    background-image: url('../img/slider-bg/forest-768.jpg');
+    background-size: cover;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-info__text {
+    max-width: 660px;
+  }
+
+  .main-info__list:not(.main-info__list--sublist) {
+    max-width: 660px;
+  }
+
+  .main-info__slider {
+    max-width: 780px;
+    margin-right: 0;
+    margin-left: calc(50% - 512px + 42px);
+  }
+
+  .main-info__cite {
+    max-width: 540px;
+    margin-right: 0;
+    margin-left: calc(50% - 512px + 42px);
+  }
+
+  .main-info__text-slider-wrapper {
+    background-image: url('../img/slider-bg/forest-1024.jpg');
+  }
+}
+
+@media (min-width: 1440px) {
+  .main-info__slider {
+    max-width: 820px;
+    margin-left: calc(50% - 720px + 226px);
+  }
+
+  .main-info__cite {
+    margin-left: calc(50% - 720px + 226px);
+  }
+
+  .main-info__text-slider-wrapper {
+    background-image: url('../img/slider-bg/forest-1440.jpg');
   }
 }
 
