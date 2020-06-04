@@ -211,6 +211,8 @@ body {
 }
 
 .main-info__text {
+  margin-bottom: 20px;
+
   font-weight: 300;
   font-size: 16px;
   line-height: 22px;
@@ -219,9 +221,43 @@ body {
 }
 
 .main-info__list {
+  margin-bottom: 20px;
+
   list-style: none;
 }
 
-.main-info__item {
-
+.main-info__list--sublist {
+  padding-left: 0;
+  margin-top: 20px;
 }
+
+.main-info__item {
+  position: relative;
+
+  padding-left: 28px;
+
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+  color: #000000;
+}
+
+.main-info__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.main-info__item::before {
+  position: absolute;
+  top: 6px;
+  left: 0;
+
+  width: 8px;
+  height: 8px;
+
+  background-color: #01576C;
+  border-radius: 50%;
+
+  content: '';
+}
+
