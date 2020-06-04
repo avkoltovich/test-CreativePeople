@@ -203,7 +203,7 @@ body {
   width: 10px;
   height: 14px;
 
-  background-image: url('../img/arrows/arrow.svg');
+  background-image: url('../img/svg/arrow.svg');
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -283,3 +283,55 @@ body {
   width: 100%;
 }
 
+.main-info__cite {
+  position: relative;
+
+  padding-top: 4px;
+  padding-left: 37px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 15px;
+}
+
+.main-info__cite::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 19px;
+  height: 15px;
+
+  background-image: url('../img/svg/quotes.svg');
+
+  content: '';
+}
+
+.cite__text {
+  margin-top: 0;
+  margin-bottom: 20px;
+
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+  color: #000000;
+}
+
+.cite__footer strong {
+  display: block;
+  margin-bottom: 5px;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+  color: #000000;
+}
+
+.cite__footer small {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
