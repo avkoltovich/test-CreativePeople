@@ -163,17 +163,65 @@ body {
 /* Блок о нас */
 
 .site-main__heading {
+  margin-bottom: 30px;
+
   font-weight: bold;
   font-size: 30px;
   line-height: 40px;
   color: #333333;
 }
 
+.site-main__nav {
+  margin-bottom: 50px;
+}
+
+.main-nav__list {
+  padding: 0;
+
+  list-style: none;
+}
+
+.main-nav__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
 .main-nav__link {
-  font-style: normal;
+  position: relative;
+
   font-weight: 600;
   font-size: 16px;
   line-height: 22px;
   text-decoration: none;
   color: #000000;
+}
+
+.main-nav__link::after {
+  position: absolute;
+  top: calc(50% - 7px);
+  right: -16px;
+
+  width: 10px;
+  height: 14px;
+
+  background-image: url('../img/arrows/arrow.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  content: '';
+}
+
+.main-info__text {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+  color: #000000;
+}
+
+.main-info__list {
+  list-style: none;
+}
+
+.main-info__item {
+
 }
