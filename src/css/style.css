@@ -1,8 +1,4 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+/* Глобальные стили */
 
 @font-face {
   font-family: 'Noto Sans';
@@ -22,6 +18,16 @@
        url('../fonts/noto-sans-v9-latin_cyrillic-700.woff') format('woff');
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans';
+}
+
 .visually-hidden {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
@@ -30,6 +36,33 @@
   height: 1px;
   width: 1px;
   overflow: hidden;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-right: calc(50% - 384px + 40px);
+    padding-left: calc(50% - 384px + 40px);
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .container {
+    padding-right: calc(50% - 512px + 42px);
+    padding-left: calc(50% - 512px + 42px);
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    padding-right: calc(50% - 720px + 40px);
+    padding-left: calc(50% - 720px + 40px);
+  }
 }
 
 /* Шапка */
@@ -71,9 +104,8 @@
   .site-header {
     justify-content: flex-start;
     padding-top: 30px;
-    padding-right: calc(50% - 384px + 40px);
     padding-bottom: 30px;
-    padding-left: calc(50% - 384px + 40px);
+
   }
 
   .site-header__button {
@@ -108,11 +140,6 @@
 }
 
 @media (min-width: 1024px) {
-  .site-header {
-    padding-right: calc(50% - 512px + 42px);
-    padding-left: calc(50% - 512px + 42px);
-  }
-
   .site-header__button {
     margin-right: 358px;
   }
@@ -121,9 +148,7 @@
 @media (min-width: 1440px) {
   .site-header {
     padding-top: 40px;
-    padding-right: calc(50% - 720px + 40px);
     padding-bottom: 40px;
-    padding-left: calc(50% - 720px + 40px);
   }
 
   .site-header__button {
@@ -138,9 +163,17 @@
 /* Блок о нас */
 
 .site-main__heading {
-  font-family: 'Noto Sans';
   font-weight: bold;
   font-size: 30px;
   line-height: 40px;
   color: #333333;
+}
+
+.main-nav__link {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  text-decoration: none;
+  color: #000000;
 }
