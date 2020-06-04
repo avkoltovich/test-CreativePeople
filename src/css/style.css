@@ -72,7 +72,8 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 15px;
+  padding-top: 15px;
+  padding-bottom: 0;
 }
 
 .site-header__button {
@@ -104,8 +105,6 @@ body {
   .site-header {
     justify-content: flex-start;
     padding-top: 30px;
-    padding-bottom: 30px;
-
   }
 
   .site-header__button {
@@ -148,7 +147,6 @@ body {
 @media (min-width: 1440px) {
   .site-header {
     padding-top: 40px;
-    padding-bottom: 40px;
   }
 
   .site-header__button {
@@ -163,6 +161,7 @@ body {
 /* Блок о нас */
 
 .site-main__heading {
+  margin-top: 40px;
   margin-bottom: 30px;
 
   font-weight: bold;
@@ -177,6 +176,7 @@ body {
 
 .main-nav__list {
   padding: 0;
+  margin: 0;
 
   list-style: none;
 }
@@ -215,6 +215,7 @@ body {
 }
 
 .main-info__text {
+  margin-top: 0;
   margin-bottom: 20px;
 
   font-weight: 300;
@@ -267,7 +268,9 @@ body {
 
 .main-info__slider {
   margin-top: 40px;
+  margin-right: 15px;
   margin-bottom: 60px;
+  margin-left: 15px;
 }
 
 .slider {
@@ -275,8 +278,6 @@ body {
 
   display: flex;
   padding: 0;
-  margin-right: 15px;
-  margin-left: 15px;
 
   list-style: none;
 
@@ -442,6 +443,94 @@ body {
   font-size: 16px;
   line-height: 22px;
   letter-spacing: -0.01em;
+}
+
+@media (min-width: 768px) {
+  .site-main__heading {
+    margin-top: 110px;
+    margin-bottom: 50px;
+
+    font-size: 45px;
+    line-height: 65px;
+  }
+
+  .site-main__nav {
+    margin-bottom: 80px;
+  }
+
+  .main-nav__list {
+    display: flex;
+  }
+
+  .main-nav__item:not(:last-child) {
+    margin-right: 65px;
+    margin-bottom: 0;
+  }
+
+  .main-nav__link {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .main-info {
+    padding-bottom: 120px;
+  }
+
+  .main-info__text {
+    margin-bottom: 30px;
+
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .main-info__list {
+    margin-bottom: 30px;
+  }
+
+  .main-info__item {
+    padding-left: 35px;
+
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .main-info__slider {
+    margin-top: 50px;
+    margin-right: 40px;
+    margin-bottom: 80px;
+    margin-left: 40px;
+  }
+
+  .main-info__cite {
+    padding-top: 8px;
+
+    margin-top: 50px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+    margin-left: 40px;
+  }
+
+  .cite__text {
+    margin-bottom: 25px;
+
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .cite__footer strong {
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .cite__footer small {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .main-info__text-slider-wrapper {
+    height: 719px;
+    margin-top: 50px;
+  }
 }
 
 /* Блок новостей */
