@@ -19,3 +19,17 @@ const scrollSiteHeaderHandler = () => {
 };
 
 scrollSiteHeaderHandler();
+
+const smoothScrollToSection = (sectionID, buttonID) => {
+  const section = document.querySelector(sectionID);
+  const button = document.querySelector(buttonID);
+
+  button.addEventListener(`click`, (evt) => {
+    evt.preventDefault();
+
+    section.scrollIntoView({block: "start", inline: "center", behavior: "smooth"});
+  });
+};
+
+smoothScrollToSection(`#main-info`, `#main-info-scroll-link`);
+smoothScrollToSection(`#news-section`, `#news-scroll-link`);
