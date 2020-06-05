@@ -736,6 +736,10 @@ body {
   border-bottom: 1px dashed rgba(51, 51, 51, 0.4);
 }
 
+.news__item--hidden {
+  display: none;
+}
+
 .news__item:last-child {
   border-bottom: 0;
 }

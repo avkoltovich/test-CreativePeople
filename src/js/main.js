@@ -59,8 +59,30 @@ const activateMobileSlider = (container, slideClass, activeSlideClass) => {
   });
 }
 
+const filterNews = (year) => {
+  const newsList = document.querySelector(`.news__list`);
+  const newsItems = newsList.querySelectorAll(`.news__item`);
+
+  newsItems.forEach(item => {
+    const newsDate = item.querySelector(`.news__date`).textContent.slice(-4);
+    if (item.classList.contains(`news__item--hidden`)) {
+      item.classList.remove(`news__item--hidden`);
+    }
+
+    if (year !== newsDate && year !== `all`) {
+      item.classList.add(`news__item--hidden`);
+    }
+  });
+};
+
+const onInputYearChange = (evt) => {
+  const selectedYear = evt.target.id;
+  filterNews(selectedYear);
+};
+
 activateScrollSiteHeader();
 smoothScrollToSection(`#main-info`, `#main-info-scroll-link`);
 smoothScrollToSection(`#news-section`, `#news-scroll-link`);
 activateMobileSlider(`.main-info__slider`, `.slider__slide`, `slider__slide--active`);
 activateMobileSlider(`.main-info__text-slider`, `.text-slider__slide`, `text-slider__slide--active`);
+document.querySelector(`#years-fieldset`).addEventListener(`change`, onInputYearChange);
