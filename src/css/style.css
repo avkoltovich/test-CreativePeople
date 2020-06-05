@@ -62,6 +62,7 @@ body {
   .container-main {
     padding-left: 0;
     padding-right: 0;
+    margin-right: calc(50% - 512px + 42px);
     margin-left: calc(50% - 512px + 42px);
   }
 }
@@ -675,6 +676,7 @@ body {
 }
 
 .news__list {
+  padding-left: 0;
   margin-top: 0;
   margin-bottom: 20px;
 
@@ -693,7 +695,14 @@ body {
 }
 
 .news__img-wrapper {
+  width: 100%;
   margin-bottom: 15px;
+}
+
+.news__img {
+  display: block;
+  width: 290px;
+  height: 195px;
 }
 
 .news__link {
@@ -761,19 +770,76 @@ body {
   .news__list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 40px;
   }
 
   .news__item {
+    position: relative;
+
+    width: 324px;
     padding-top: 40px;
     padding-bottom: 40px;
+
+    border-bottom: 0;
   }
 
-  .news__item:nth-child(even) {
-    padding-left: 20px;
+  .news__item:nth-child(even):not(:last-child)::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    width: calc(768px - 80px);
+    height: 1px;
+
+    border-bottom: 1px dashed rgba(51, 51, 51, 0.4);
+
+    content: '';
   }
 
-  .news__item:nth-child(odd) {
-    padding-right: 20px;
+  .news__img {
+    display: block;
+    width: 324px;
+    height: 220px;
+  }
+
+  .news__load-more-btn {
+    width: 242px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .news__list {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    width: calc(1024px - 84px);
+  }
+
+  .news__item {
+    width: 300px;
+  }
+
+  .news__item:nth-child(even):not(:last-child)::after {
+    display: none;
+  }
+
+  .news__item:nth-child(3n):not(:last-child)::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    display: block;
+    width: calc(1024px - 84px);
+    height: 1px;
+
+    border-bottom: 1px dashed rgba(51, 51, 51, 0.4);
+
+    content: '';
+  }
+
+  .news__img {
+    display: block;
+    width: 300px;
+    height: 210px;
   }
 }
 
@@ -807,6 +873,9 @@ body {
 }
 
 .site-footer__agency {
+  margin-top: 0;
+  margin-bottom: 0;
+
   font-weight: 300;
   font-size: 16px;
   line-height: 22px;
@@ -819,4 +888,29 @@ body {
   font-weight: 600;
   text-decoration: none;
   color: #ff6c6c;
+}
+
+@media (min-width: 768px) {
+  .site-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 58px;
+  }
+
+  .site-footer::before {
+    margin-bottom: 60px;
+  }
+
+  .site-footer__years {
+    margin-bottom: 0;
+
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .site-footer__agency {
+    font-size: 18px;
+    line-height: 24px;
+  }
 }
