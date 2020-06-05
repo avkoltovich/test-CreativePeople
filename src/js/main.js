@@ -33,14 +33,28 @@ const activateImageMobileSlider = () => {
   const mainInfoSlider = document.querySelector(`.main-info__slider`);
   const mainInfoSlides = mainInfoSlider.querySelectorAll(`.slider__slide`);
   let currentActiveSlide = 0;
+  let start = 0;
+  let end = 0;
 
-  mainInfoSlider.addEventListener(`click`, () => {
-    if ((currentActiveSlide + 1) !== mainInfoSlides.length) {
-      mainInfoSlides[currentActiveSlide].classList.remove(`slider__slide--active`);
-      currentActiveSlide++;
-      mainInfoSlides[currentActiveSlide].classList.add(`slider__slide--active`);
+  mainInfoSlider.addEventListener(`touchstart`, (evt) => {
+    start = evt.touches[0].pageX;
+  });
+
+  mainInfoSlider.addEventListener(`touchend`, (evt) => {
+    end = evt.changedTouches[0].pageX;
+
+    if (start < end) {
+      if (currentActiveSlide !== 0) {
+        mainInfoSlides[currentActiveSlide].classList.remove(`slider__slide--active`);
+        currentActiveSlide--;
+        mainInfoSlides[currentActiveSlide].classList.add(`slider__slide--active`);
+      }
     } else {
-      console.log(`end`)
+      if ((currentActiveSlide + 1) !== mainInfoSlides.length) {
+        mainInfoSlides[currentActiveSlide].classList.remove(`slider__slide--active`);
+        currentActiveSlide++;
+        mainInfoSlides[currentActiveSlide].classList.add(`slider__slide--active`);
+      }
     }
   });
 }
