@@ -311,6 +311,14 @@ body {
   overflow: hidden;
 }
 
+.slider__slide {
+  display: none;
+}
+
+.slider__slide--active {
+  display: list-item;
+}
+
 .slider__img {
   display: block;
   width: calc(100vw - 30px);
