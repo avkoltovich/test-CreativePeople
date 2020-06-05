@@ -29,31 +29,31 @@ const smoothScrollToSection = (sectionID, buttonID) => {
   });
 };
 
-const activateImageMobileSlider = () => {
-  const mainInfoSlider = document.querySelector(`.main-info__slider`);
-  const mainInfoSlides = mainInfoSlider.querySelectorAll(`.slider__slide`);
+const activateMobileSlider = (container, slideClass, activeSlideClass) => {
+  const slider = document.querySelector(container);
+  const slides = slider.querySelectorAll(slideClass);
   let currentActiveSlide = 0;
   let start = 0;
   let end = 0;
 
-  mainInfoSlider.addEventListener(`touchstart`, (evt) => {
+  slider.addEventListener(`touchstart`, (evt) => {
     start = evt.touches[0].pageX;
   });
 
-  mainInfoSlider.addEventListener(`touchend`, (evt) => {
+  slider.addEventListener(`touchend`, (evt) => {
     end = evt.changedTouches[0].pageX;
 
     if (start < end) {
       if (currentActiveSlide !== 0) {
-        mainInfoSlides[currentActiveSlide].classList.remove(`slider__slide--active`);
+        slides[currentActiveSlide].classList.remove(activeSlideClass);
         currentActiveSlide--;
-        mainInfoSlides[currentActiveSlide].classList.add(`slider__slide--active`);
+        slides[currentActiveSlide].classList.add(activeSlideClass);
       }
     } else {
-      if ((currentActiveSlide + 1) !== mainInfoSlides.length) {
-        mainInfoSlides[currentActiveSlide].classList.remove(`slider__slide--active`);
+      if ((currentActiveSlide + 1) !== slides.length) {
+        slides[currentActiveSlide].classList.remove(activeSlideClass);
         currentActiveSlide++;
-        mainInfoSlides[currentActiveSlide].classList.add(`slider__slide--active`);
+        slides[currentActiveSlide].classList.add(activeSlideClass);
       }
     }
   });
@@ -62,4 +62,5 @@ const activateImageMobileSlider = () => {
 activateScrollSiteHeader();
 smoothScrollToSection(`#main-info`, `#main-info-scroll-link`);
 smoothScrollToSection(`#news-section`, `#news-scroll-link`);
-activateImageMobileSlider();
+activateMobileSlider(`.main-info__slider`, `.slider__slide`, `slider__slide--active`);
+activateMobileSlider(`.main-info__text-slider`, `.text-slider__slide`, `text-slider__slide--active`);

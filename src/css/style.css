@@ -440,18 +440,26 @@ body {
 }
 
 .main-info__text-slider {
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+
   list-style: none;
 }
 
 .text-slider__slide {
   display: none;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
 
   text-align: center;
   color: #ffffff;
 }
 
 .text-slider__slide--active {
-  display: list-item;
+  display: flex;
 }
 
 .text-slider__heading {
@@ -479,6 +487,10 @@ body {
   font-size: 16px;
   line-height: 22px;
   letter-spacing: -0.01em;
+}
+
+.main-info__text-slider-dots {
+  margin-top: auto;
 }
 
 @media (min-width: 768px) {
