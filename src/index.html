@@ -49,6 +49,11 @@
           d="M17.805 29.3443C19.2528 28.7871 20.624 28.0701 22.2136 29.5636C23.1946 30.4853 23.9041 30.3844 24.5455 30.0412C25.1866 29.6981 29.1362 25.6395 29.6754 24.3117C30.2146 22.984 29.9233 22.8046 29.6754 22.4021C29.4279 21.9991 27.708 21.059 28.7427 18.1049C29.7777 15.1508 30.5903 12.9261 34.8057 18.1049C35.2429 18.642 34.8057 20.9697 34.8057 20.9697C34.8057 20.9697 31.8334 30.749 21.7474 34.8158C20.1816 35.447 16.6456 34.4474 15.2182 31.951C14.5186 30.7276 15.5332 30.2186 17.805 29.3443Z"
           fill="white" />
       </symbol>
+      <symbol id="slider-button" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect class="svg-slider-button-circle" width="40" height="40" rx="20" fill="#FF6C6C"/>
+        <rect x="24" y="19" width="2" height="11" transform="rotate(90 24 19)" fill="white"/>
+        <path d="M21 15L25 20L21 25" stroke="white" stroke-width="2"/>
+      </symbol>
     </svg>
   </div>
   <header class="site-header container-header">
@@ -217,6 +222,23 @@
           </p>
         </li>
       </ul>
+      <div class="main-info__slider-controls slider-controls container-main">
+        <div class="slider-controls__count">
+          1/15
+        </div>
+        <div class="slider-controls__button-wrapper">
+          <button class="slider-controls__button slider-controls__button--left" type="button" aria-label="Назад">
+            <svg class="slider-controls__button-icon slider-controls__button-icon--left" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#slider-button"></use>
+            </svg>
+          </button>
+          <button class="slider-controls__button" type="button" aria-label="Вперёд">
+            <svg class="slider-controls__button-icon" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#slider-button"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
       <p class="main-info__text container-main">
         Можно предположить, что изменение глобальной стратегии поддерживает экспериментальный метод изучения рынка.
         Традиционный канал стабилизирует product placement, осознавая социальную ответственность бизнеса. По сути,
