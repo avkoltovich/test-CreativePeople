@@ -658,10 +658,67 @@ body {
 
   .main-info__text-slider-wrapper {
     height: 719px;
+    padding-top: 0;
+    padding-bottom: 0;
     margin-top: 50px;
 
     background-image: url('../img/slider-bg/forest-768.jpg');
     background-size: cover;
+  }
+
+  .main-info__text-slider {
+    padding-right: calc(50% - 384px + 80px);
+    padding-left: calc(50% - 384px + 80px);
+  }
+
+  .text-slider__slide {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 25%;
+  }
+
+  .text-slider__slide::after {
+    position: absolute;
+    left: calc((50vw - 384px + 80px) * -1);
+    bottom: 0;
+
+    width: 100vw;
+    height: 1px;
+
+    background: #ffffff;
+    opacity: 0.2;
+
+    content: '';
+  }
+
+  .text-slider__heading {
+    width: 144px;
+    margin-top: 0;
+    margin-right: 50px;
+    margin-bottom: 0;
+
+    text-align: center;
+  }
+
+  .text-slider__subheading {
+    margin-bottom: 0;
+  }
+
+  .text-slider__text {
+    display: none;
+  }
+
+  .text-slider__toggle-button {
+    padding: 0;
+    margin-left: auto;
+
+    background-color: transparent;
+    border: 0;
+
+    cursor: pointer;
   }
 }
 
