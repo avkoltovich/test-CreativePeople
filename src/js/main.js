@@ -59,6 +59,8 @@ const activateMobileSlider = (container, slideClass, activeSlideClass) => {
   });
 }
 
+// решение задачи фильтрации "влоб"
+
 const filterNews = (year) => {
   const newsList = document.querySelector(`.news__list`);
   const newsItems = newsList.querySelectorAll(`.news__item`);
@@ -85,6 +87,7 @@ smoothScrollToSection(`#main-info`, `#main-info-scroll-link`);
 smoothScrollToSection(`#news-section`, `#news-scroll-link`);
 activateMobileSlider(`.main-info__slider`, `.slider__slide`, `slider__slide--active`);
 activateMobileSlider(`.main-info__text-slider`, `.text-slider__slide`, `text-slider__slide--active`);
+
 // document.querySelector(`#years-fieldset`).addEventListener(`change`, onInputYearChange);
 
 const newsContainer = document.querySelector(`#news-section`);
