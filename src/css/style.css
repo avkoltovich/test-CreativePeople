@@ -656,6 +656,7 @@ body {
 .news__filter-news,
 .news__filter-month {
   position: relative;
+  z-index: 10;
 }
 
 .news__filter-button {

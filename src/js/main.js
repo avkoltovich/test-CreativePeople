@@ -86,3 +86,8 @@ smoothScrollToSection(`#news-section`, `#news-scroll-link`);
 activateMobileSlider(`.main-info__slider`, `.slider__slide`, `slider__slide--active`);
 activateMobileSlider(`.main-info__text-slider`, `.text-slider__slide`, `text-slider__slide--active`);
 document.querySelector(`#years-fieldset`).addEventListener(`change`, onInputYearChange);
+
+const newsContainer = document.querySelector(`#news-section`);
+const SHOWN_NEWS_COUNT = 3;
+const newController = new NewsController(newsContainer, newsList, SHOWN_NEWS_COUNT);
+newController.render();
