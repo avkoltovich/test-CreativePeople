@@ -59,11 +59,41 @@ const activateMobileSlider = (container, slideClass, activeSlideClass) => {
   });
 }
 
+const activateImageSlider = () => {
+  const slider = document.querySelector(`.main-info__slider`);
+  const slides = slider.querySelectorAll(`.slider__slide`);
+  const sliderControls = document.querySelector(`.main-info__slider-controls`);
+  const sliderButtonLeft = sliderControls.querySelector(`.slider-controls__button--left`);
+  const sliderButtonRight = sliderControls.querySelector(`.slider-controls__button--right`);
+  let currentActiveSlide = 0;
+
+  sliderButtonLeft.addEventListener(`click`, () => {
+    if (currentActiveSlide !== 0) {
+      slides[currentActiveSlide].classList.remove(`slider__slide--active`);
+      currentActiveSlide--;
+      slides[currentActiveSlide].classList.add(`slider__slide--active`);
+    }
+  });
+
+  sliderButtonRight.addEventListener(`click`, () => {
+    if ((currentActiveSlide + 1) !== slides.length) {
+      slides[currentActiveSlide].classList.remove(`slider__slide--active`);
+      currentActiveSlide++;
+      slides[currentActiveSlide].classList.add(`slider__slide--active`);
+    }
+  });
+};
+
 activateScrollSiteHeader();
 smoothScrollToSection(`#main-info`, `#main-info-scroll-link`);
 smoothScrollToSection(`#news-section`, `#news-scroll-link`);
-activateMobileSlider(`.main-info__slider`, `.slider__slide`, `slider__slide--active`);
-activateMobileSlider(`.main-info__text-slider`, `.text-slider__slide`, `text-slider__slide--active`);
+
+if (window.innerWidth < 768) {
+  activateMobileSlider(`.main-info__slider`, `.slider__slide`, `slider__slide--active`);
+  activateMobileSlider(`.main-info__text-slider`, `.text-slider__slide`, `text-slider__slide--active`);
+} else {
+  activateImageSlider();
+}
 
 const newsContainer = document.querySelector(`#news-section`);
 const SHOWN_NEWS_COUNT = 3;
