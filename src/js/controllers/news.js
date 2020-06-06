@@ -29,7 +29,7 @@ class NewsController {
 
     render(this._container, this._newsListComponent);
 
-    this._loadMoreButtonComponent.setClickHandler(this._onLoadMoreButtonClick)
+    this._loadMoreButtonComponent.setClickHandler(this._onLoadMoreButtonClick);
     render(this._container, this._loadMoreButtonComponent);
   }
 
@@ -38,8 +38,11 @@ class NewsController {
       this._loadMoreButtonComponent.getElement().remove();
       this._loadMoreButtonComponent = null;
     } else if(!(this._loadMoreButtonComponent)) {
-      this._loadMoreButtonComponent = new LoadMoreButton();
-      render(this._container, this._loadMoreButtonComponent);
+      if (this._shownNewsCount < this._filteredNewsList.length) {
+        this._loadMoreButtonComponent = new LoadMoreButton();
+        this._loadMoreButtonComponent.setClickHandler(this._onLoadMoreButtonClick);
+        render(this._container, this._loadMoreButtonComponent);
+      }
     }
   }
 
@@ -92,6 +95,8 @@ class NewsController {
 
     this._rerenderFilterElement();
     this._rerenderNewsListElement();
+
+    this._checkLoadMoreButton();
   }
 
   _onLoadMoreButtonClick() {
