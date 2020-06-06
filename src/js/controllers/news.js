@@ -83,10 +83,12 @@ class NewsController {
     this._filteredNewsList = this._newsList.slice();
 
     if (this._filterArguments.filterYear !== `all`) this._filteredNewsList = this._filteredNewsList.filter((item) => item.date.slice(-4) === this._filterArguments.filterYear);
+
+    this._filterArguments.newsMonthsList = this._getUpSortedItems(Array.from(new Set(this._filteredNewsList.map((item) => item.date.slice(3, 5)))));
+
     if (this._filterArguments.filterMonth !== `all`) this._filteredNewsList = this._filteredNewsList.filter((item) => item.date.slice(3, 5) === this._filterArguments.filterMonth);
 
     this._shownNewsList = this._filteredNewsList.slice(0, this._shownNewsCount);
-    this._filterArguments.newsMonthsList = this._getUpSortedItems(Array.from(new Set(this._filteredNewsList.map((item) => item.date.slice(3, 5)))));
 
     this._rerenderFilterElement();
     this._rerenderNewsListElement();
