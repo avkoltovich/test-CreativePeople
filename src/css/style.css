@@ -713,6 +713,8 @@ body {
 
     border-top: 1px solid rgba(256, 256, 256, 0);
     border-bottom: 1px solid rgba(256, 256, 256, 0.2);
+
+    transition: flex-grow 0.3s, width ease-in-out 0.3s, height ease-in-out 0.3s;
   }
 
   .text-slider__slide:hover {
@@ -802,6 +804,10 @@ body {
 
     font-size: 18px;
     line-height: 25px;
+
+    opacity: 0;
+
+    transition: opacity ease-in-out 0.3s;
   }
 
   .text-slider__slide--open .text-slider__toggle-button {
@@ -817,6 +823,14 @@ body {
     height: 26px;
 
     transform: rotate(45deg);
+
+    transition: transform ease-in-out 0.3s;
+  }
+
+  .text-slider__slide--animation .text-slider__text {
+    opacity: 1;
+
+    transition: opacity ease-in-out 0.3s;
   }
 }
 
