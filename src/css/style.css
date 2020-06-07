@@ -494,6 +494,10 @@ body {
   letter-spacing: -0.01em;
 }
 
+.text-slider__br {
+  display: none;
+}
+
 .text-slider__text {
   font-weight: 300;
   font-size: 16px;
@@ -503,6 +507,10 @@ body {
 
 .main-info__text-slider-dots {
   margin-top: auto;
+}
+
+.text-slider__toggle-button {
+  display: none;
 }
 
 @media (min-width: 768px) {
@@ -682,7 +690,7 @@ body {
 
   .text-slider__slide::after {
     position: absolute;
-    left: calc((50vw - 384px + 80px) * -1);
+    right: calc((50vw - 384px + 80px) * -1);
     bottom: 0;
 
     width: 100vw;
@@ -692,6 +700,10 @@ body {
     opacity: 0.2;
 
     content: '';
+  }
+
+  .text-slider__slide:last-child::after {
+    display: none;
   }
 
   .text-slider__heading {
@@ -712,6 +724,7 @@ body {
   }
 
   .text-slider__toggle-button {
+    display: block;
     padding: 0;
     margin-left: auto;
 
@@ -754,6 +767,45 @@ body {
   .main-info__text-slider-wrapper {
     background-image: url('../img/slider-bg/forest-1024.jpg');
   }
+
+  .main-info__text-slider {
+    display: flex;
+    height: 720px;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .text-slider__slide {
+    flex-direction: column;
+    height: 100%;
+    padding-top: 510px;
+  }
+
+  .text-slider__slide::after {
+    top: 0;
+    right: 0;
+    bottom: auto;
+
+    width: 1px;
+    height: 100%;
+  }
+
+  .text-slider__heading {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .text-slider__br {
+    display: inline;
+  }
+
+  .text-slider__toggle-button {
+    order: -1;
+    margin-bottom: 48px;
+    margin-left: 0;
+  }
 }
 
 @media (min-width: 1440px) {
@@ -779,6 +831,10 @@ body {
 
   .main-info__text-slider-wrapper {
     background-image: url('../img/slider-bg/forest-1440.jpg');
+  }
+
+  .text-slider__br {
+    display: none;
   }
 }
 
